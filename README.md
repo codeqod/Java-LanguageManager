@@ -26,8 +26,8 @@ public class Project {
     
         targetClassManager = new LanguageManager<>("targetCategory", TargetClass.class);
         
-        TargetClass.sendStartMessage(Languages.GERMAN);
-    
+        String translatedText = targetClassManager.getTranslatedMessage(Languages.ENGLISH, "startMessage", "Bot");
+        
     }
 
 }
@@ -35,15 +35,10 @@ public class Project {
 
 > TargetClass.java
 ```
-public class TargetClass {
+public class TargetClass implements ILanguageFile {
 
-    private String startMessage = "Starting {1}";
+    public String startMessage = "Starting {0}";
     
-    public void sendStartMessage(Languages language) {
-    
-        System.out.println(Project.targetClassManager.getTranslatedMessage(language, "targetCategory", "ProjectName"));
-    
-    }
 
 }
 ```
@@ -52,7 +47,7 @@ public class TargetClass {
 ```
 {
 
-    "startMessage": "Starte {1}"
+    "startMessage": "Starting {0}"
 
 }
 ```
