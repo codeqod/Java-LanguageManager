@@ -43,7 +43,7 @@ public class TargetClass implements ILanguageFile {
 }
 ```
 
-> ./languages/GERMAN.json (Language file)
+> ./languages/ENGLISH.json (Language file)
 ```
 {
 
