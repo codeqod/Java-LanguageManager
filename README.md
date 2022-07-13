@@ -7,8 +7,7 @@ Create a LanguageManager of a subclass of an ILanguageFile and all fields of it 
 ```
 LanguageManager<T> languageManager = new LanguageManager<>("categoryName", Class<T>);
 ```
-By default the files are saved in the current path, you can change it by using `LanguageControl.getFileManager().setLanguageDirectory("path")`
-  All messages are stored in Json files in the format `LANGUAGE.json`
+By default the files are saved in the current path under `languages`, you can change it by using `LanguageControl.getFileManager().setLanguageDirectory("path")`. All messages are stored in Json files in the format `LANGUAGE.json`
 
 ### Translate messages
 You can use translations by including the target language, the key for the wanted message and optional variables in the format `{number}`.
