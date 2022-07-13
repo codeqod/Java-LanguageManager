@@ -17,4 +17,43 @@ languageManager.getTranslatedMessage(Languages.LANGUAGE, "messageKey", arguments
 ```
 
 ## Example
-> 
+> Project.java (Main class)
+```
+public class Project {
+
+    LanguageManager<TargetClass> targetClassManager;
+
+    public static void main(String[] args) {
+    
+        targetClassManager = new LanguageManager<>("targetCategory", TargetClass.class);
+        
+        TargetClass.sendStartMessage(Languages.GERMAN);
+    
+    }
+
+}
+```
+
+> TargetClass.java
+```
+public class TargetClass {
+
+    private String startMessage = "Starting {1}";
+    
+    public void sendStartMessage(Languages language) {
+    
+        System.out.println(Project.targetClassManager.getTranslatedMessage(language, "targetCategory", "ProjectName"));
+    
+    }
+
+}
+```
+
+> ./languages/GERMAN.json (Language file)
+```
+{
+
+    "startMessage": "Starte {1}"
+
+}
+```
